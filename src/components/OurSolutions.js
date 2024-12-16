@@ -1,40 +1,101 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import loka from '../images/loka.jpg';
+import nirmana from '../images/nirmana.jpg';
+import aarna from '../images/aarna.jpg';
+import eyora from '../images/eyore.jpg';
+import saha from '../images/saha.jpg';
 
 const OurSolutions = () => {
   const solutions = [
-    { id: 1, imgSrc: "/images/loka.png", alt: "Solution 1", title: "Solution 1" },
-    { id: 2, imgSrc: "/images/nirmana.png", alt: "Solution 2", title: "Solution 2" },
-    { id: 3, imgSrc: "/images/aarna.png", alt: "Solution 3", title: "Solution 3" },
-    { id: 4, imgSrc: "/images/eyora.png", alt: "Solution 4", title: "Solution 4" },
-    { id: 5, imgSrc: "/images/saha.png", alt: "Solution 5", title: "Solution 5" },
-    { id: 6, imgSrc: "/images/solution-pop.jpg", alt: "Solution 6", title: "Solution 6", isPopup: true },  // Special Popup Image
+    { id: 1, imgSrc: loka, alt: "Solution 1", title: "LOKA", info: "Solution LOKA provides innovative designs for modern businesses." },
+    { id: 2, imgSrc: nirmana, alt: "Solution 2", title: "NIRMANA", info: "NIRMANA focuses on sustainable development and green energy solutions." },
+    { id: 3, imgSrc: aarna, alt: "Solution 3", title: "AARNA", info: "AARNA offers cutting-edge technology for AI and machine learning." },
+    { id: 4, imgSrc: eyora, alt: "Solution 4", title: "EYORA", info: "EYORA delivers advanced cloud solutions for enterprise-level projects." },
+    { id: 5, imgSrc: saha, alt: "Solution 5", title: "SAHA", info: "SAHA integrates smart solutions for urban development and IoT." },
   ];
+  const overlays = useRef([]);
+
+  const handleMouseEnter = (index) => {
+    overlays.current[index].style.opacity = '1'; 
+  };
+
+  const handleMouseLeave = (index) => {
+    overlays.current[index].style.opacity = '0'; 
+  };
 
   return (
     <section className="container my-5">
       <h2 className="text-center mb-4">Our Solutions</h2>
-      <div className="row">
+
+      <div
+        className="d-flex justify-content-center align-items-center flex-wrap"
+      >
         {solutions.map((solution, index) => (
           <div
             key={index}
-            className={`col-md-4 mb-4`}
-            style={{ position: 'relative', padding: '0 10px' }}
+            className="solution-img-container"
+            style={{
+              position: 'relative',
+              width: '200px',
+              height: '400px',
+              borderRadius: '8px',
+              overflow: 'hidden',
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            }}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(index)}
           >
-            <div
-              className={`solution-img-container ${solution.isPopup ? 'popup-img' : ''}`}
+            <img
+              src={solution.imgSrc}
+              alt={solution.alt}
               style={{
-                backgroundImage: `url(${solution.imgSrc})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                aspectRatio: '1/2', // Aspect Ratio 1:2 (height:width)
-                height: '200px',
-                borderRadius: '8px',
-                transition: 'transform 0.3s ease-in-out',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                transition: 'transform 0.3s ease',
+              }}
+            />
+            <div
+              className="solution-title-overlay"
+              style={{
+                position: 'absolute',
+                bottom: '0',
+                width: '100%',
+                background: 'rgba(0, 0, 0, 0.6)',
+                color: '#fff',
+                textAlign: 'center',
+                padding: '10px 0',
+                fontSize: '16px',
+                fontWeight: 'bold',
               }}
             >
-              <div className="solution-title-overlay">
-                <h3 className="text-white">{solution.title}</h3>
-              </div>
+              {solution.title}
+            </div>
+
+            <div
+              className="overlay"
+              ref={(el) => (overlays.current[index] = el)}
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                bottom: '0',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                color: 'white',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                opacity: '0', 
+                transition: 'opacity 0.3s ease',
+                padding: '20px',
+                textAlign: 'center',
+                fontSize: '14px',
+              }}
+            >
+              <p>{solution.info}</p>
             </div>
           </div>
         ))}
