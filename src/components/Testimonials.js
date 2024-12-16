@@ -2,20 +2,16 @@ import React from 'react';
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-5">
-      <div className="container text-center">
-        <h2>What People Are Saying</h2>
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <blockquote className="blockquote">
-              <p>
-                "When I'm not designing, you can find me exploring new hiking
-                trails or experimenting with digital art."
-              </p>
-              <footer className="blockquote-footer">Lekshmi V, UI/UX Designer</footer>
-            </blockquote>
-          </div>
-        </div>
+    <section className="container my-5">
+      <h2 className="text-center mb-4">What People Are Saying</h2>
+      <div className="text-center">
+        <img 
+          src="https://via.placeholder.com/80?text=User" 
+          alt="User" 
+          className="rounded-circle mb-3"
+        />
+        <p>"This platform transformed the way I learn and teach. Highly recommended!"</p>
+        <h6>- John Doe</h6>
       </div>
     </section>
   );

@@ -1,0 +1,32 @@
+/* html, body {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+  
+  img {
+    border-radius: 10px;
+  }
+  h2, h3 {
+    margin-bottom: 1rem;
+  } */
+   /* App.css */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  border-radius: 10px;
+}
