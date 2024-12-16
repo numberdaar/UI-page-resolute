@@ -25,3 +25,10 @@ img {
   bottom: 0;
   width: 100%;
 }
+.solution-img-container:hover img {
+  transform: translateY(-10px); /* Moves the image upwards */
+}
+
+.solution-img-container:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow for better hover effect */
+}

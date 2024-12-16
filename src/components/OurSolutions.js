@@ -16,26 +16,22 @@ const OurSolutions = () => {
   const overlays = useRef([]);
 
   const handleMouseEnter = (index) => {
-    overlays.current[index].style.opacity = '1'; 
+    overlays.current[index].style.opacity = '1';
   };
 
   const handleMouseLeave = (index) => {
-    overlays.current[index].style.opacity = '0'; 
+    overlays.current[index].style.opacity = '0';
   };
 
   return (
     <section className="container my-5">
       <h2 className="text-center mb-4">Our Solutions</h2>
-
-      <div
-        className="d-flex justify-content-center align-items-center flex-wrap"
-      >
+      <div className="d-flex justify-content-center align-items-center flex-wrap">
         {solutions.map((solution, index) => (
           <div
             key={index}
-            className="solution-img-container"
+            className="solution-img-container position-relative"
             style={{
-              position: 'relative',
               width: '200px',
               height: '400px',
               borderRadius: '8px',
@@ -49,23 +45,16 @@ const OurSolutions = () => {
             <img
               src={solution.imgSrc}
               alt={solution.alt}
+              className="w-100 h-100"
               style={{
-                width: '100%',
-                height: '100%',
                 objectFit: 'cover',
                 transition: 'transform 0.3s ease',
               }}
             />
             <div
-              className="solution-title-overlay"
+              className="solution-title-overlay position-absolute bottom-0 w-100 text-center text-white py-2"
               style={{
-                position: 'absolute',
-                bottom: '0',
-                width: '100%',
                 background: 'rgba(0, 0, 0, 0.6)',
-                color: '#fff',
-                textAlign: 'center',
-                padding: '10px 0',
                 fontSize: '16px',
                 fontWeight: 'bold',
               }}
@@ -74,25 +63,12 @@ const OurSolutions = () => {
             </div>
 
             <div
-              className="overlay"
+              className="overlay position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-center align-items-center text-white text-center p-3"
               ref={(el) => (overlays.current[index] = el)}
               style={{
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                right: '0',
-                bottom: '0',
                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                color: 'white',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                opacity: '0', 
+                opacity: '0',
                 transition: 'opacity 0.3s ease',
-                padding: '20px',
-                textAlign: 'center',
-                fontSize: '14px',
               }}
             >
               <p>{solution.info}</p>
