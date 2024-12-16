@@ -1,11 +1,13 @@
 import React from 'react';
-
+import student from '../images/pexels-shvetsa-3986997.jpg';
+import teacher from '../images/pexels-mikhail-nilov-8653658.jpg';
+import parent from '../images/pexels-vidalbalielojrfotografia-1682497.jpg';
 const SectionValues = () => {
   const values = [
     {
       mainHeading: "For Students",
       subHeading: "Your Ultimate Academic Ally",
-      backgroundImage: "https://via.placeholder.com/1200x400?text=For+Students",
+      backgroundImage: student,
       children: [
         { title: "Focused Learning", description: "Focused tools that help students study effectively and manage their time." },
         { title: "Interactive Note-Taking", description: "Take interactive notes to improve retention and understanding." },
@@ -15,7 +17,7 @@ const SectionValues = () => {
     {
       mainHeading: "For Teachers",
       subHeading: "Your Ultimate Teaching Toolkit",
-      backgroundImage: "https://via.placeholder.com/1200x400?text=For+Teachers",
+      backgroundImage: teacher,
       children: [
         { title: "Comprehensive Class Management", description: "Tools to manage classrooms with ease and efficiency." },
         { title: "Efficient Evaluation", description: "Streamlined evaluation methods to save time." },
@@ -25,7 +27,7 @@ const SectionValues = () => {
     {
       mainHeading: "For Institutions",
       subHeading: "A Smarter Solution for Institutions",
-      backgroundImage: "https://via.placeholder.com/1200x400?text=For+Institutions",
+      backgroundImage: parent,
       children: [
         { title: "Streamlined Administration", description: "Manage administrative tasks more effectively." },
         { title: "Cost-Effective Solutions", description: "Affordable tools tailored for institutions." },
