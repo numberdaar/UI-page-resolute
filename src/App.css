@@ -30,3 +30,12 @@ img {
 .card {
   border-radius: 10px;
 }
+.solution-title-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

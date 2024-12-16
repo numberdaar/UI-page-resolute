@@ -7,7 +7,7 @@ const OurSolutions = () => {
     { id: 3, imgSrc: "/images/aarna.png", alt: "Solution 3", title: "Solution 3" },
     { id: 4, imgSrc: "/images/eyora.png", alt: "Solution 4", title: "Solution 4" },
     { id: 5, imgSrc: "/images/saha.png", alt: "Solution 5", title: "Solution 5" },
-    { id: 6, imgSrc: "/images/solution-pop.png", alt: "Solution 6", title: "Solution 6", isPopup: true },  // Special Popup Image
+    { id: 6, imgSrc: "/images/solution-pop.jpg", alt: "Solution 6", title: "Solution 6", isPopup: true },  // Special Popup Image
   ];
 
   return (

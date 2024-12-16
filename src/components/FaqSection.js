@@ -2,15 +2,15 @@ import React from 'react';
 
 const FaqSection = () => {
   return (
-    <section className="container my-5">
+    <section id="faq" className="container my-5">
       <h2 className="text-center mb-4">FAQ</h2>
       <div className="accordion" id="faqAccordion">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
-            <button 
-              className="accordion-button" 
-              type="button" 
-              data-bs-toggle="collapse" 
+            <button
+              className="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
             >
               What is e-Ink technology?

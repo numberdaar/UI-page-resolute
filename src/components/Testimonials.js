@@ -1,17 +1,23 @@
 import React from 'react';
 
 const Testimonials = () => {
+  const testimonials = [
+    { id: 1, text: "This solution has changed how I learn!", author: "Student A" },
+    { id: 2, text: "Managing classrooms has never been easier.", author: "Teacher B" },
+  ];
+
   return (
-    <section className="container my-5">
-      <h2 className="text-center mb-4">What People Are Saying</h2>
-      <div className="text-center">
-        <img 
-          src="https://via.placeholder.com/80?text=User" 
-          alt="User" 
-          className="rounded-circle mb-3"
-        />
-        <p>"This platform transformed the way I learn and teach. Highly recommended!"</p>
-        <h6>- John Doe</h6>
+    <section id="testimonials" className="container my-5 text-center">
+      <h2>Testimonials</h2>
+      <div className="row">
+        {testimonials.map((testimonial) => (
+          <div key={testimonial.id} className="col-md-6">
+            <blockquote className="blockquote">
+              <p>"{testimonial.text}"</p>
+              <footer className="blockquote-footer">{testimonial.author}</footer>
+            </blockquote>
+          </div>
+        ))}
       </div>
     </section>
   );
